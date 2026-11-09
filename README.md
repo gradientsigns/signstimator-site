@@ -25,19 +25,15 @@ Do **not** add a `CNAME` file yet. `signstimator.com` is still attached to the p
 
 ## App Store link
 
-`js/site.js` contains `APP_STORE_URL`. It is an empty string on purpose.
+`js/site.js` sets `APP_STORE_URL` to the Signstimator 1.0 listing, `https://apps.apple.com/app/id6818383304`. Every `[data-app-store]` link uses that constant and opens in a new tab.
 
-```js
-// TODO: Replace APP_STORE_URL with the real App Store listing URL.
-const APP_STORE_URL = "";
-```
-
-When the listing exists, set that constant to the real `https://apps.apple.com/...` URL. Until then the Download button stays a Coming Soon placeholder and does not point at a guessed address.
+The download image is Apple’s official “Download on the App Store” badge (`assets/app-store-badge.svg`), unmodified. It is the white badge because the page background is dark. On screen it is 48px tall, with at least one-quarter of that height kept clear around it.
 
 ## Brand assets
 
 - `assets/logo.webp` and `assets/logo.jpg` — vinyl-roll mark, 640×640
-- `favicon.ico`, `favicon-32.png`, `favicon-16.png`, `apple-touch-icon.png`
+- `assets/app-store-badge.svg` — official App Store badge
+- `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`
 
 ## Privacy note
 

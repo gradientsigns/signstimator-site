@@ -205,7 +205,7 @@ h3 { letter-spacing: -0.02em; line-height: 1.25; }
 .actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 1rem;
   align-items: center;
   margin: 1.4rem 0 1.1rem;
 }
@@ -223,27 +223,17 @@ h3 { letter-spacing: -0.02em; line-height: 1.25; }
   border: 1px solid transparent;
 }
 
-.btn-store {
-  background: #fff;
-  color: var(--ink);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+/* Official App Store badge. Do not recolor, shadow, or stretch the artwork.
+   Clear space is at least one-quarter of the 48px badge height. */
+.store-badge {
+  display: inline-flex;
+  line-height: 0;
 }
 
-.btn-store:hover { background: var(--cyan); }
-
-.btn-store small {
+.store-badge img {
   display: block;
-  font-weight: 600;
-  font-size: 0.68rem;
-  letter-spacing: 0.02em;
-  line-height: 1.1;
-}
-
-.btn-store strong {
-  display: block;
-  font-size: 1.15rem;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  height: 48px;
+  width: calc(48px * 119.66407 / 40);
 }
 
 .btn-ghost {
@@ -656,7 +646,7 @@ h3 { letter-spacing: -0.02em; line-height: 1.25; }
 
 .segment {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 4px;
   background: #e7eeef;
   border-radius: 12px;
@@ -950,6 +940,13 @@ h3 { letter-spacing: -0.02em; line-height: 1.25; }
 }
 
 .footer-inner p { margin: 0; font-size: 0.92rem; }
+
+.legal-note {
+  flex-basis: 100%;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #8aa0a6;
+}
 
 .footer-inner nav {
   display: flex;
