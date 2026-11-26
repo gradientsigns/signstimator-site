@@ -73,6 +73,7 @@ a:hover { text-decoration-thickness: 2px; }
   position: sticky;
   top: 0;
   z-index: 10;
+  padding-top: env(safe-area-inset-top, 0px);
   background: rgba(5, 15, 21, 0.92);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(32, 223, 230, 0.16);
@@ -926,7 +927,8 @@ h3 { letter-spacing: -0.02em; line-height: 1.25; }
   border-top: 1px solid rgba(32, 223, 230, 0.16);
   background: #040c11;
   color: var(--muted-dark);
-  padding: 1.4rem 0 1.8rem;
+  /* Extra bottom space so the fixed music button does not cover footer links. */
+  padding: 1.4rem 0 calc(5.25rem + env(safe-area-inset-bottom, 0px));
 }
 
 .footer-inner {
@@ -1021,6 +1023,77 @@ h3 { letter-spacing: -0.02em; line-height: 1.25; }
   font-weight: 700;
 }
 
+/* Floating music control. Dark like the header so it stays visible on light and dark bands. */
+.music-audio {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.music-toggle {
+  position: fixed;
+  z-index: 30;
+  right: calc(1rem + env(safe-area-inset-right, 0px));
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(32, 223, 230, 0.55);
+  background: rgba(5, 15, 21, 0.94);
+  color: var(--cyan);
+  box-shadow:
+    0 10px 24px rgba(5, 15, 21, 0.35),
+    0 0 0 1px rgba(32, 223, 230, 0.12);
+  cursor: pointer;
+  font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.music-toggle svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.music-toggle .icon-on { display: none; }
+
+.music-toggle[aria-pressed="true"] {
+  background: var(--cyan);
+  color: var(--ink);
+  border-color: var(--cyan);
+}
+
+.music-toggle[aria-pressed="true"] .icon-off { display: none; }
+.music-toggle[aria-pressed="true"] .icon-on { display: block; }
+
+.music-toggle:hover {
+  border-color: var(--cyan);
+}
+
+.music-toggle:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (forced-colors: active) {
+  .music-toggle {
+    background: ButtonFace;
+    color: ButtonText;
+    border: 1px solid ButtonText;
+    box-shadow: none;
+  }
+}
+
 @media (min-width: 640px) {
   .cards { grid-template-columns: 1fr 1fr; }
   .parties { grid-template-columns: 1fr 1fr; }
@@ -1060,7 +1133,7 @@ h3 { letter-spacing: -0.02em; line-height: 1.25; }
 }
 
 @media print {
-  .site-header, .site-footer, .skip-link, .actions { display: none !important; }
+  .site-header, .site-footer, .skip-link, .actions, .music-toggle { display: none !important; }
   body, .page-doc, .band-light { background: #fff; color: #000; }
   .prose, .faq article, .form-card, .card, .plan { box-shadow: none; }
   a { color: #000; }
