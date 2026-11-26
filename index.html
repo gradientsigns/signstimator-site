@@ -323,89 +323,116 @@
         <h2>Estimates and invoices</h2>
         <p class="section-lead">Version 1.0 includes PDF and text export. Version 1.1 Premium adds JPEG export, CSV and QuickBooks export, and Estimate to Invoice. The paperwork below is a sample job.</p>
         <figure class="docs-figure">
-          <div class="docs" aria-hidden="true">
-            <article class="paper">
-              <header class="paper-top">
-                <img src="assets/logo.jpg" alt="" width="46" height="46">
-                <div><strong>Signstimator</strong><span>Gradient Signs LLC<br>Long Island, NY</span></div>
-              </header>
-              <div class="paper-body">
-                <div class="doc-kicker">
-                  <h3 class="doc-title">ESTIMATE</h3>
-                  <p class="doc-meta">EST-2026-1142<br>Date: Nov 8, 2026<br>Valid for 30 days</p>
-                </div>
-                <div class="parties">
-                  <div>
-                    <h3>From</h3>
-                    <p>Gradient Signs LLC<br>Long Island, NY<br>hello@signstimator.com</p>
+          <!-- Sample pages are the app's unbranded PDF HTML from utils/estimatePdf.js. -->
+          <div class="docs">
+            <article class="export-frame">
+              <div class="export-doc">
+                <div class="page">
+                  <div class="head">
+                    <div class="left">
+                      <div class="coname">Your Sign Shop</div>
+                      <div class="tiny"></div>
+                      <div class="tiny">Phone: 555-555-0100 | Email: hello@example.com</div>
+                    </div>
+                    <div class="right">
+                      <div class="doc">Invoice #: EST-2026-11080941 | Page 1 of 1</div>
+                      <div class="forwho">Estimate for: Harborview Dental</div>
+                      <div class="kind">ESTIMATE</div>
+                      <div class="tiny">Job: Front fascia channel letters</div>
+                      <div class="tiny"></div>
+                      <div class="tiny">Email: frontdesk@example.com | Phone: 555-555-0142</div>
+                      <div class="tiny">Date: 11/8/2026</div>
+                    </div>
                   </div>
-                  <div>
-                    <h3>Bill to</h3>
-                    <p>Harborview Dental<br>Front fascia channel letters<br>631-555-0142</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th class="col-num">#</th>
+                        <th class="col-type">Type</th>
+                        <th>Description</th>
+                        <th class="col-qty">Qty</th>
+                        <th class="col-unit">Unit Price</th>
+                        <th class="col-price">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="col-num">1</td>
+                        <td class="col-type">Channel Letters</td>
+                        <td class="col-desc">12 FAB letters, 18"H x 5"D, 24ft lit @ 6500K, Raceway: 10ft x 5"</td>
+                        <td class="col-qty">12</td>
+                        <td class="col-unit">$309.67</td>
+                        <td class="col-price">$3716.00</td>
+                      </tr>
+                      <tr class="labor">
+                        <td class="col-num"></td>
+                        <td class="col-type"></td>
+                        <td class="col-desc labor-desc">Labor: Lead Installer — 3 hrs × 2 people</td>
+                        <td class="col-qty">6</td>
+                        <td class="col-unit">$95.00</td>
+                        <td class="col-price">$570.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="totals">
+                    <div>Subtotal: $4286.00</div>
+                    <div>Tax (8.63%): $369.67</div>
+                    <div class="grand">Grand Total: $4655.67</div>
                   </div>
+                  <div class="note">This estimate is valid for 30 days from 11/8/2026. Prices subject to site survey.</div>
                 </div>
-                <table class="doc-table">
-                  <thead><tr><th>Item</th><th>Description</th><th>Amount</th></tr></thead>
-                  <tbody>
-                    <tr>
-                      <td>Channel Letters</td>
-                      <td>12 FAB · 18″H × 5″D<br>24ft lit @ 6500K<br>Raceway 10ft × 5″</td>
-                      <td>$3,716.00</td>
-                    </tr>
-                    <tr>
-                      <td>Install / Labor</td>
-                      <td>Lead Installer<br>3 hrs × 2 people</td>
-                      <td>$570.00</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="totals">
-                  <div><span>Subtotal</span><span>$4,286.00</span></div>
-                  <div><span>Tax (8.625%)</span><span>$369.67</span></div>
-                  <div class="grand"><strong>Total</strong><strong>$4,655.67</strong></div>
-                </div>
-                <p class="fine">This estimate is valid for 30 days from the date above. Prices subject to site survey.</p>
-                <p class="fine print-row"><span>Generated with Signstimator</span><span>Page 1 of 1</span></p>
               </div>
             </article>
-            <article class="paper">
-              <header class="paper-top">
-                <img src="assets/logo.jpg" alt="" width="46" height="46">
-                <div><strong>Signstimator</strong><span>Gradient Signs LLC<br>Long Island, NY</span></div>
-              </header>
-              <div class="paid">PAID</div>
-              <div class="paper-body">
-                <div class="doc-kicker">
-                  <h3 class="doc-title">INVOICE</h3>
-                  <p class="doc-meta">INV-2026-0891<br>Invoice date: Nov 8, 2026<br>Due: Nov 22, 2026 · Net 14</p>
-                </div>
-                <div class="parties">
-                  <div>
-                    <h3>From</h3>
-                    <p>Gradient Signs LLC<br>Long Island, NY<br>hello@signstimator.com</p>
+            <article class="export-frame">
+              <div class="export-doc">
+                <div class="page">
+                  <div class="head">
+                    <div class="left">
+                      <div class="coname">Your Sign Shop</div>
+                      <div class="tiny"></div>
+                      <div class="tiny">Phone: 555-555-0100 | Email: hello@example.com</div>
+                    </div>
+                    <div class="right">
+                      <div class="doc">Invoice #: INV-2026-11081430 | Page 1 of 1</div>
+                      <div class="forwho">Invoice for: Apex Plumbing</div>
+                      <div class="kind">INVOICE</div>
+                      <div class="tiny">Job: Van wrap — fleet #3</div>
+                      <div class="tiny"></div>
+                      <div class="tiny">Email: office@example.com | Phone: 555-555-0199</div>
+                      <div class="tiny">Date: 11/8/2026</div>
+                      <div class="tiny">Due: 11/22/2026 · Net 14</div>
+                    </div>
                   </div>
-                  <div>
-                    <h3>Bill to</h3>
-                    <p>Bay Shore Plumbing<br>Van wrap — fleet #3<br>631-555-0199</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th class="col-num">#</th>
+                        <th class="col-type">Type</th>
+                        <th>Description</th>
+                        <th class="col-qty">Qty</th>
+                        <th class="col-unit">Unit Price</th>
+                        <th class="col-price">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="col-num">1</td>
+                        <td class="col-type">Vehicle Wrap</td>
+                        <td class="col-desc">1 × 3M wrap (120 sqft), Vehicle Wash/Dry</td>
+                        <td class="col-qty">1</td>
+                        <td class="col-unit">$2180.00</td>
+                        <td class="col-price">$2180.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="totals">
+                    <div>Subtotal: $2180.00</div>
+                    <div>Tax (8.63%): $188.02</div>
+                    <div class="grand">Grand Total: $2368.03</div>
+                    <div class="grand">Amount Due: $2368.03</div>
                   </div>
+                  <div class="note">Invoice date: 11/8/2026 · Due: 11/22/2026 (Net 14)</div>
                 </div>
-                <table class="doc-table">
-                  <thead><tr><th>Item</th><th>Description</th><th>Amount</th></tr></thead>
-                  <tbody>
-                    <tr>
-                      <td>Vehicle Wrap</td>
-                      <td>3M full wrap · 120 sqft<br>Includes vehicle wash</td>
-                      <td>$2,180.00</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div class="totals">
-                  <div><span>Subtotal</span><span>$2,180.00</span></div>
-                  <div><span>Tax (8.625%)</span><span>$188.03</span></div>
-                  <div class="grand"><strong>Amount Due</strong><strong>$0.00</strong></div>
-                </div>
-                <p class="fine">Payment received — thank you. Terms: Net 14. Remit to Gradient Signs LLC.</p>
-                <p class="fine print-row"><span>Generated with Signstimator</span><span>Page 1 of 1</span></p>
               </div>
             </article>
           </div>
