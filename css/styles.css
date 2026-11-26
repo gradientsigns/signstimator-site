@@ -731,109 +731,25 @@ h3 { letter-spacing: -0.02em; line-height: 1.25; }
   align-items: center;
 }
 
-.docs {
-  display: grid;
-  gap: 1.25rem;
-  grid-template-columns: minmax(0, 1fr);
-}
-
-/* Unbranded shop PDF, scoped from utils/estimatePdf.js.
-   Letter width when the column can hold 8.5in. Narrow screens reflow the same fields. */
-.export-frame {
-  width: 100%;
-  max-width: 8.5in;
-  min-width: 0;
+.sample-paper {
+  width: min(100%, 8.5in);
   margin-inline: auto;
   background: #fff;
-  color: #000;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  line-height: 0;
 }
 
-.export-doc {
-  background: #fff;
-  color: #000;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 10pt;
+.sample-paper img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.export-doc .page {
-  padding: 0.6in 0.4in;
-  background: #fff;
-  color: #000;
-}
-
-.export-doc .head { display: flex; justify-content: space-between; align-items: flex-start; width: 100%; }
-.export-doc .left { width: 46%; padding-right: 8pt; }
-.export-doc .right { width: 52%; text-align: right; }
-.export-doc .coname { font-size: 19pt; font-weight: 700; line-height: 1.1; margin: 2pt 0; color: #000; }
-.export-doc .doc { font-size: 13pt; font-weight: 700; line-height: 1.2; margin: 0 0 2pt; color: #000; }
-.export-doc .forwho { font-size: 15pt; font-weight: 700; line-height: 1.2; margin: 0 0 3pt; color: #000; }
-.export-doc .kind { font-size: 9pt; font-weight: 700; margin: 0; color: #000; }
-.export-doc .tiny { font-size: 9pt; line-height: 1.25; margin: 0; color: #000; }
-.export-doc .paid { font-size: 11pt; font-weight: 700; margin-top: 3pt; color: #000; }
-.export-doc table { width: 100%; border-collapse: collapse; margin-top: 8pt; table-layout: fixed; }
-.export-doc tr { page-break-inside: avoid; }
-.export-doc th,
-.export-doc td {
-  border: none;
-  border-bottom: 0.6pt solid #e2e2e2;
-  padding: 2px 4px;
-  font-size: 9.5pt;
-  line-height: 1.15;
-  font-weight: 400;
-  text-align: left;
-  vertical-align: top;
-  background: #fff;
-  color: #000;
-  overflow-wrap: break-word;
-}
-.export-doc th { font-weight: 700; border-bottom: 0.75pt solid #ccc; font-size: 9pt; }
-.export-doc .col-num { width: 0.32in; }
-.export-doc .col-type { width: 1.15in; font-size: 8.5pt; white-space: nowrap; }
-.export-doc .col-desc { font-size: 9.5pt; white-space: normal; }
-.export-doc .labor-desc { padding-left: 12pt; }
-.export-doc .col-qty,
-.export-doc th.col-qty { width: 0.42in; text-align: right; }
-.export-doc .col-unit,
-.export-doc th.col-unit { width: 0.85in; text-align: right; white-space: nowrap; }
-.export-doc .col-price,
-.export-doc th.col-price { width: 0.85in; text-align: right; white-space: nowrap; }
-.export-doc .totals { margin-top: 10pt; text-align: right; font-weight: 700; font-size: 11pt; line-height: 1.35; color: #000; }
-.export-doc .totals .grand { font-size: 13pt; }
-.export-doc .note { margin-top: 10pt; font-size: 9pt; line-height: 1.3; font-weight: 400; text-align: left; color: #000; }
-
-@media (max-width: 859px) {
-  .export-doc .page { padding: 14px 10px 16px; }
-  .export-doc .head { flex-direction: column; gap: 8px; }
-  .export-doc .left,
-  .export-doc .right { width: 100%; padding-right: 0; }
-  .export-doc .right { text-align: left; }
-  .export-doc .coname { font-size: 18pt; }
-  .export-doc .doc { font-size: 11pt; }
-  .export-doc .forwho { font-size: 13pt; }
-  .export-doc .tiny,
-  .export-doc .kind { font-size: 10pt; }
-  .export-doc table { table-layout: auto; }
-  .export-doc .col-num,
-  .export-doc .col-type,
-  .export-doc .col-qty,
-  .export-doc th.col-qty,
-  .export-doc .col-unit,
-  .export-doc th.col-unit,
-  .export-doc .col-price,
-  .export-doc th.col-price { width: auto; }
-  .export-doc .col-type { white-space: normal; }
-  .export-doc th,
-  .export-doc td { overflow-wrap: normal; padding: 3px 3px; }
-  .export-doc th.col-unit,
-  .export-doc th.col-price { white-space: normal; }
-  .export-doc td.col-qty,
-  .export-doc td.col-unit,
-  .export-doc td.col-price { white-space: nowrap; }
-  .export-doc .col-desc { overflow-wrap: break-word; }
-  .export-doc .labor-desc { padding-left: 0; }
+.sample-pdf {
+  margin: 1rem 0 0;
+  text-align: center;
 }
 
 .plans {
